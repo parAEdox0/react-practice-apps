@@ -1,31 +1,10 @@
 import { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import BlogList from "../components/BlogList";
+import useFetch from "../hooks/useFetch";
 
 const App = () => {
-  const [blogs, setBlogs] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
-  useEffect(() => {
-    setTimeout(() => {
-      fetch("http://localhost:5000/blogs")
-        .then((res) => {
-          if (!res.ok) {
-            throw Error("Could not find the resource");
-          }
-          return res.json();
-        })
-        .then((data) => {
-          setBlogs(data);
-          setIsLoading(false);
-          setError(false);
-        })
-        .catch((err) => {
-          setError(err.message);
-          setIsLoading(false);
-        });
-    }, 1500);
-  }, []);
+  const [blogs, isLoading, error] = useFetch("http://localhost:5000/blogs");
 
   return (
     <>
