@@ -17,12 +17,6 @@
       "title": "Introduction to Cloud Computing",
       "author": "Alex Carter",
       "text": "Cloud computing delivers computing services like storage, servers, databases, and networking."
-    },
-    {
-      "id": 4,
-      "title": "Mastering JavaScript Closures",
-      "author": "Emily Johnson",
-      "text": "Closures are a powerful feature in JavaScript."
     }
   ]
 }

@@ -1,18 +1,17 @@
-import { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
-import BlogList from "../components/BlogList";
-import useFetch from "../hooks/useFetch";
+import Home from "../pages/Home";
+import Create from "../pages/Create";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 const App = () => {
-  const [blogs, isLoading, error] = useFetch("http://localhost:5000/blogs");
-
   return (
-    <>
+    <BrowserRouter>
       <Navbar />
-      {error && <p className="ml-[200px]">{error}</p>}
-      {isLoading && <p className="ml-[200px]">Loading...</p>}
-      {blogs && <BlogList blogs={blogs} />}
-    </>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/create" element={<Create />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
