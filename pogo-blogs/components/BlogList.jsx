@@ -2,7 +2,7 @@ import React from "react";
 
 const BlogList = ({ blogs }) => {
   return (
-    <div id="blogs" className="flex flex-col min-h-[83vh] ml-[200px] gap-5">
+    <div id="blogs" className="flex flex-col min-h-[83vh] gap-5">
       {blogs.map((blog) => (
         <div key={blog.id} className="w-[60vw] flex flex-col gap-1">
           <h2 className="font-semibold text-xl text-pink-400">{blog.title}</h2>

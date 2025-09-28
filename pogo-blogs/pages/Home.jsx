@@ -5,8 +5,8 @@ const Home = () => {
   const [blogs, isLoading, error] = useFetch("http://localhost:5000/blogs");
   return (
     <div>
-      {error && <p className="ml-[200px]">{error}</p>}
-      {isLoading && <p className="ml-[200px]">Loading...</p>}
+      {error && <p>{error}</p>}
+      {isLoading && <p>Loading...</p>}
       {blogs && <BlogList blogs={blogs} />}
     </div>
   );
