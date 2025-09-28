@@ -1,19 +1,19 @@
 {
   "blogs": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Getting Started with React",
       "author": "Jane Doe",
       "text": "React is a JavaScript library"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Understanding Tailwind CSS",
       "author": "John Smith",
       "text": "Tailwind CSS is a utility-first CSS framework."
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Introduction to Cloud Computing",
       "author": "Alex Carter",
       "text": "Cloud computing delivers computing services like storage, servers, databases, and networking."

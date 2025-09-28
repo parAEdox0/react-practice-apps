@@ -1,7 +1,15 @@
 import { Link } from "react-router-dom";
 import { H4, H2 } from "../styles/Styles";
 
-const BlogList = ({ blogs }) => {
+const BlogList = ({ blogs, setBlogs }) => {
+  const HandleDelete = (id) => {
+    fetch(`http://localhost:5000/blogs/${id}`, {
+      method: "DELETE",
+    }).then(() => {
+      setBlogs(blogs.filter((blog) => id !== blog.id));
+    });
+  };
+
   return (
     <div id="blogs" className="flex flex-col min-h-[83vh] gap-5">
       {blogs.map((blog) => (
@@ -13,7 +21,10 @@ const BlogList = ({ blogs }) => {
             <H2 className=" cursor-pointer">{blog.title}</H2>
             <H4>written by {blog.author} </H4>
           </Link>
-          <button className="bg-zinc-600 w-14 p-1 rounded-sm text-white cursor-pointer">
+          <button
+            onClick={() => HandleDelete(blog.id)}
+            className="bg-zinc-600 w-14 p-1 rounded-sm text-white cursor-pointer"
+          >
             delete
           </button>
         </div>
